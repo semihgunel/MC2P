@@ -4,7 +4,8 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/20509861/132999255-34327a13-7ea2-4391-8af9-f00e71f5a14d.png" width="700">
 </p>
-A tethered Drosophila melanogaster behaving freely while neural and behavior activity is recorded using multi-view infrared cameras and two-photon microscopy imaging. Please read the [publication](todo) for more information.
+
+A tethered Drosophila melanogaster behaving freely while neural and behavior activity is recorded using multi-view infrared cameras and two-photon microscopy imaging. Please check the [publication](todo) for more information.
 
 ## Introduction
 
