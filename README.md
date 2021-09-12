@@ -8,7 +8,7 @@ A tethered Drosophila melanogaster behaving freely while neural and behavior act
 
 ## Introduction
 
-- Download the files using the [link](todo). The whole dataset is close to 200GB. 
+- Download the files using the [link](todo). The dataset includes 8 different animals and total of 118 folders. The whole dataset is close to 200GB. 
 The file format will look like this:
 
 ```sh
@@ -29,8 +29,6 @@ The file format will look like this:
 +-- Readme.md
 ```
 
-
-
 ## How to Use
 
 - You can directly read raw files and visualize them:
@@ -38,30 +36,47 @@ The file format will look like this:
 ```python
 import nelydataloader.functional import NF
 import matplotlib.pyplot as plt
-dff = NF.read_dff('./201008_G23xU1_Fly1_001')
+import mediapy as media
 
-# normalize and colormap
+dff = NF.read_dff('./201008_G23xU1_Fly1_001')
+dff = NF.normalize_video(dff)
 plt.imshow(dff[0])
 ```
 or to load the 2D pose as a time sequence, use
 
 ```python
 import nelydataloader.functional import NF
-pr = NF.read_pr('./201008_G23xU1_Fly1_001')
+import nelydataloader.augmentation import PRUnnorm
+pr = PRUnnorm()(NF.read_pr('./201008_G23xU1_Fly1_001'))
+media.show_video(NP.plot_pts2d_video(pr))
 ```
-
-
+- You can use pytorch dataloaders to train a model. To get a single modality:
 ```python
 import nelydataloader.dataset as ND
-ND.DatasetUM(
+dat = ND.DatasetUM(
     path_list=['./201008_G23xU1_Fly1_001'],
     n_frames=32,
     modal='dff',
     stride=1
 )
+
+dff, _ = dat[0]
 ```
 
+You can choose from modalities, dff, resized_dff, pr and angles. To get a multiple synchronized modalities: 
 
+```python
+import nelydataloader.dataset as ND
+ND.DatasetMM(
+    path_list=['./201008_G23xU1_Fly1_001'],
+    modal1='dff',
+    modal2='pr',
+    n_frames1=32,
+    n_frames2=8,
+    stride=1,
+),
+(dff, _), (pr, _) = dat[0]
+```
 
 ## BibTeX
 ```bash
