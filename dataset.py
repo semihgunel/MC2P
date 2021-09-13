@@ -2,7 +2,7 @@ import bisect
 from os import remove
 import random
 from typing import Callable, Dict, List, Optional, Set, Tuple
-from nelydataloader.augmentation import DFFTransformEval, TimeSeriesTransformEval
+from augmentation import DFFTransformEval, TimeSeriesTransformEval
 from torch import Tensor
 
 import numpy as np
@@ -13,8 +13,7 @@ from einops import repeat
 from skimage.transform import resize
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
-
-from . import functional as NF
+import functional as NF
 
 
 def clipmd_to_clip(clip_middle: int, n_frames: int, stride: int, upper: int = None):
