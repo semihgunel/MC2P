@@ -1,5 +1,5 @@
 
-# Motion Capture and Two-photon dataset.
+# Motion Capture and Two-photon dataset
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/20509861/132999255-34327a13-7ea2-4391-8af9-f00e71f5a14d.png" width="700">
