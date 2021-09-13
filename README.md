@@ -9,7 +9,7 @@ A tethered Drosophila melanogaster behaving freely while neural and behavior act
 
 ## Introduction
 
-- Download the files using the [link](todo). The dataset includes 8 different animals and total of 118 folders. The whole dataset is close to 200GB. 
+- Download the files using the [link](todo). The dataset includes 8 different animals and total of 133 folders. The whole dataset is close to 200GB. 
 The file format will look like this:
 
 ```sh
@@ -48,7 +48,12 @@ or to load the 2D pose as a time sequence, use
 ```python
 import nelydataloader.functional import NF
 import nelydataloader.augmentation import PRUnnorm
-pr = PRUnnorm()(NF.read_pr('./201008_G23xU1_Fly1_001'))
+
+# raw 2d data
+pr = NF.read_pr('./201008_G23xU1_Fly1_001')
+# preprocess
+pr = PRUnnorm()(pr)
+
 media.show_video(NP.plot_pts2d_video(pr))
 ```
 - You can use pytorch dataloaders to train a model. To get a single modality:
