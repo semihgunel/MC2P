@@ -1,0 +1,15 @@
+
+name: mc2p
+channels: 
+  - pytorch
+  - anaconda
+  - defaults
+dependencies:
+  - scipy>=1.4.0
+  - numpy>=1.17
+  - matplotlib 
+  - torchvision==0.7.0
+  - pytorch==1.6.0
+  - jupyterlab
+  - opencv
+  - seaborn
