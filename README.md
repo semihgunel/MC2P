@@ -35,7 +35,7 @@ The file format will look like this:
 - You can directly read raw files and visualize them:
 
 ```python
-import nelydataloader.functional import NF
+import functional import NF
 import matplotlib.pyplot as plt
 import mediapy as media
 
@@ -46,8 +46,8 @@ plt.imshow(dff[0])
 or to load the 2D pose as a time sequence, use
 
 ```python
-import nelydataloader.functional import NF
-import nelydataloader.augmentation import PRUnnorm
+import functional import NF
+import augmentation import PRUnnorm
 
 # raw 2d data
 pr = NF.read_pr('./201008_G23xU1_Fly1_001')
@@ -58,7 +58,7 @@ media.show_video(NP.plot_pts2d_video(pr))
 ```
 - You can use pytorch dataloaders to train a model. To get a single modality:
 ```python
-import nelydataloader.dataset as ND
+import dataset as ND
 dat = ND.DatasetUM(
     path_list=['./201008_G23xU1_Fly1_001'],
     n_frames=32,
@@ -72,7 +72,7 @@ dff, _ = dat[0]
 You can choose from modalities, dff, resized_dff, pr and angles. To get a multiple synchronized modalities: 
 
 ```python
-import nelydataloader.dataset as ND
+import dataset as ND
 ND.DatasetMM(
     path_list=['./201008_G23xU1_Fly1_001'],
     modal1='dff',
