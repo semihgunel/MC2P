@@ -2,11 +2,9 @@ import bisect
 from os import remove
 import random
 from typing import Callable, Dict, List, Optional, Set, Tuple
-from augmentation import DFFTransformEval, TimeSeriesTransformEval
 from torch import Tensor
 
 import numpy as np
-import pytorch_lightning as pl
 import torch
 import torchvision.transforms.functional as TF
 from einops import repeat
@@ -14,6 +12,9 @@ from skimage.transform import resize
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
 import functional as NF
+
+import pandas as pd
+from sklearn import preprocessing
 
 
 def clipmd_to_clip(clip_middle: int, n_frames: int, stride: int, upper: int = None):
@@ -228,9 +229,6 @@ class DatasetBehav(DatasetBase):
     # fmt: on
 
 
-from nelydataloader.augmentation import TimeSeriesTransformEval
-import pandas as pd
-from sklearn import preprocessing
 
 
 class DatasetMM(torch.utils.data.Dataset):

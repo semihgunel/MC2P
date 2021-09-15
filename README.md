@@ -35,27 +35,24 @@ The file format will look like this:
 - You can directly read raw files and visualize them:
 
 ```python
-import functional import NF
-import matplotlib.pyplot as plt
-import mediapy as media
-
-dff = NF.read_dff('./201008_G23xU1_Fly1_001')
+import functional as NF
+dff = NF.read_dff('/data/MM/data/201014_G23xU1_Fly1_005')
 dff = NF.normalize_video(dff)
-plt.imshow(dff[0])
+plt.imshow(dff[0], cmap='jet')
 ```
 or to load the 2D pose as a time sequence, use
 
 ```python
-import functional import NF
-import augmentation import PRUnnorm
+import functional as NF
+import augmentation as NA
 
-# raw 2d data
-pr = NF.read_pr('./201008_G23xU1_Fly1_001')
-# preprocess
-pr = PRUnnorm()(pr)
-
-media.show_video(NP.plot_pts2d_video(pr))
+pr = NF.read_pose_result_mm('/data/MM/data/201014_G23xU1_Fly1_005')
+pr = pr + 0 # make it writable
+pr = NA.PRunNorm()(pr.reshape(-1, 38, 2)) # preprocess
+pr = pr.cpu().data.numpy().reshape(-1, 38, 2) # convert to numpy to visualize
+media.show_video(NP.plot_pts2d_video(pr[:100]), height=200)
 ```
+
 - You can use pytorch dataloaders to train a model. To get a single modality:
 ```python
 import dataset as ND
@@ -66,28 +63,30 @@ dat = ND.DatasetUM(
     stride=1
 )
 
-dff, _ = dat[0]
+dff, meta = dat[0]
 ```
 
 You can choose from modalities, dff, resized_dff, pr and angles. To get a multiple synchronized modalities: 
 
 ```python
 import dataset as ND
-ND.DatasetMM(
+dat = ND.DatasetMM(
     path_list=['./201008_G23xU1_Fly1_001'],
     modal1='dff',
     modal2='pr',
     n_frames1=32,
     n_frames2=8,
+    aug1=nn.Identity(),
+    aug2=nn.Identity(),
     stride=1,
-),
-(dff, _), (pr, _) = dat[0]
+)
+(_, _) = dat[0]
 ```
 
 ## BibTeX
 ```bash
 @InProceedings{gunel21,
-  title = "Contrastive Learning of Neural Representations using Animal Behavior",
+  title = "Contrastive Learning of Neural Action Representations using Animal Behavior",
   booktitle = "arXiv",
   year = "2021"
 }

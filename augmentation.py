@@ -1,5 +1,4 @@
 import numpy as np
-import cv2
 from torch.functional import Tensor
 from torchvision import transforms
 from torch import nn
@@ -9,16 +8,14 @@ from functional import get_pose_result_stat
 
 from typing import List
 from torchvision.transforms import Compose
-from torchaudio.transforms import FrequencyMasking, TimeMasking
 from torchvision.transforms.transforms import Normalize
+import functional as NF
 
-
-class TimeSeriesTransformEvalunNorm(object):
+class PRunNorm(object):
     def __init__(self,):
         data_transforms = [
             toTorch(),
             RootSet(),
-            Subset(),
         ]
         self.transform = Compose(data_transforms)
 
@@ -26,7 +23,7 @@ class TimeSeriesTransformEvalunNorm(object):
         return self.transform(X)
 
 
-class TimeSeriesTransformEval(object):
+class PREval(object):
     def __init__(self):
         data_transforms = [
             toTorch(),
@@ -40,7 +37,7 @@ class TimeSeriesTransformEval(object):
         return self.transform(X)
 
 
-class TimeSeriesTransformEvalInverse(object):
+class PRInverse(object):
     """ takes output of TimeSeriesTransformEval.
         expects pytorch Tensor. 
         >>> for (behav, d), (neural, _) in dm_train:
@@ -92,8 +89,6 @@ class RootSet(object):
     def __call__(self, X):
         X = im2skeleton(X)
         for t in self.tree:
-            # print(X[t].size(), X[[t[0]]].size())
-            # print(X.size(), X.size(), X[:, t[0]].size())
             X[:, t] -= X[:, [t[0]]]
         return skeleton2im(X)
 
@@ -179,7 +174,7 @@ class Subset(object):
         return NF.pts2d_remove_stationary(X.unsqueeze(0)).squeeze()  # X[:, self.subset]
 
 
-import nelydataloader.functional as NF
+
 
 
 class invSubset(object):

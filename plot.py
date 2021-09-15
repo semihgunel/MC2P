@@ -3,8 +3,6 @@ from typing import Callable, Dict, List, Optional, Set, Tuple
 import cv2
 import numpy as np
 
-import cv2
-
 
 def __plot_pts2d_frame(
     pts2d: np.ndarray,

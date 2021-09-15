@@ -6,8 +6,13 @@ channels:
   - defaults
 dependencies:
   - scipy>=1.4.0
+  - scikit-image
+  - scikit-learn
   - numpy>=1.17
   - matplotlib 
   - torchvision==0.7.0
   - pytorch==1.6.0
   - jupyterlab
+  - opencv
+  - einops
+  - pandas
