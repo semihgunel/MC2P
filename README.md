@@ -80,7 +80,7 @@ dat = ND.DatasetMM(
     aug2=nn.Identity(),
     stride=1,
 )
-(_, _) = dat[0]
+((dff, _),  (pr, _)) = dat[0]
 ```
 
 ## BibTeX
