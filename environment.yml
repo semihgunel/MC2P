@@ -1,5 +1,5 @@
 
-name: mc2p3
+name: mc2p
 channels: 
   - pytorch
   - anaconda
