@@ -1,17 +1,18 @@
 
-name: mc2p
+name: mc2p3
 channels: 
   - pytorch
   - anaconda
   - defaults
+  - conda-forge
 dependencies:
-  - scipy>=1.4.0
+  - scipy
   - scikit-image
   - scikit-learn
-  - numpy>=1.17
+  - numpy
   - matplotlib 
-  - torchvision==0.7.0
-  - pytorch==1.6.0
+  - torchvision
+  - pytorch
   - jupyterlab
   - opencv
   - einops
