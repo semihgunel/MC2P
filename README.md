@@ -32,7 +32,13 @@ The file format will look like this:
 
 ## How to Use
 
-- You can directly read raw files and visualize them:
+- Install the dependencies using 
+```bash
+conda env create -f environment.yml
+conda activate mc2p
+```
+
+- You can directly read raw files and visualize:
 
 ```python
 import functional as NF
