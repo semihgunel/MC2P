@@ -88,12 +88,3 @@ dat = ND.DatasetMM(
 )
 ((dff, _),  (pr, _)) = dat[0]
 ```
-
-## BibTeX
-```bash
-@InProceedings{gunel21,
-  title = "Contrastive Learning of Neural Action Representations using Animal Behavior",
-  booktitle = "arXiv",
-  year = "2021"
-}
-```
