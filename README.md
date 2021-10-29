@@ -9,7 +9,7 @@ A tethered Drosophila melanogaster behaving freely while neural and behavior act
 
 ## Introduction
 
-- Download the files using the [link](https://drive.google.com/drive/folders/1gjG038zdCcPzjcqBreEWeHM0lU1VL0Md?usp=sharing). __During the double-blind review process, we give a sample of the recorded dataset on an anonymous drive account.__ The full dataset will be released after the publication. The dataset includes 8 different animals and total of 133 folders. The whole dataset is close to 200GB. 
+- Download the files using the following anonymized [link](https://drive.google.com/drive/folders/1gjG038zdCcPzjcqBreEWeHM0lU1VL0Md?usp=sharing). __During the double-blind review process, we give a sample of the dataset on an anonymous account.__ The full dataset will be released with the camera-ready version, on a non-anonymized link. The sample dataset includes 40 different animals and total of 364 folders. The whole dataset is close to 200GB. 
 The file format will look like this:
 
 ```sh
