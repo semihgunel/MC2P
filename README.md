@@ -30,7 +30,7 @@ The file format will look like this:
 +-- Readme.md
 ```
 
-## How to Use
+## How to Use the Dataset
 
 - Install the dependencies using 
 ```bash
