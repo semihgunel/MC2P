@@ -5,7 +5,10 @@
   <img src="https://user-images.githubusercontent.com/20509861/132999255-34327a13-7ea2-4391-8af9-f00e71f5a14d.png" width="700">
 </p>
 
-A tethered Drosophila melanogaster behaving freely while neural and behavior activity is recorded using multi-view infrared cameras and two-photon microscopy imaging. Please check the [publication](https://arxiv.org/abs/2112.01176) for more information.
+A tethered Drosophila melanogaster behaving freely while neural and behavior activity is recorded using multi-view infrared cameras and two-photon microscopy imaging. Please check the following publications for more information.
+- [Overcoming the Domain Gap in Neural Action Representations](https://arxiv.org/abs/2112.01176)
+- [Descending neuron population dynamics during odor-evoked and spontaneous limb-dependent behaviors](https://elifesciences.org/articles/81527)
+
 
 ## Introduction
 
