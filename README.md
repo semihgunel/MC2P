@@ -29,7 +29,7 @@ The file format will look like this:
 ...
 +-- Readme.md
 ```
-- 2p_dff files includes micrscopy two-photon imaging.
+- 2p_dff files includes microscopy two-photon imaging.
 - BehData camera videos include raw behavioral videos.
 - pose_result files include 2D and 3D pose.
 
@@ -49,7 +49,7 @@ dff = NF.read_dff('/data/MM/data/201014_G23xU1_Fly1_005')
 dff = NF.normalize_video(dff)
 plt.imshow(dff[0], cmap='jet')
 ```
-or to load the 2D pose as a time sequence, use
+or to load the 2D pose and visualize them as a time sequence, use
 
 ```python
 import functional as NF
