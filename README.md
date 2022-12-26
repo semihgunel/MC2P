@@ -29,6 +29,9 @@ The file format will look like this:
 ...
 +-- Readme.md
 ```
+- 2p_dff files includes micrscopy two-photon imaging.
+- BehData camera videos include raw behavioral videos.
+- pose_result files include 2D and 3D pose.
 
 ## How to Use the Dataset
 
