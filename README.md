@@ -5,11 +5,11 @@
   <img src="https://user-images.githubusercontent.com/20509861/132999255-34327a13-7ea2-4391-8af9-f00e71f5a14d.png" width="700">
 </p>
 
-A tethered Drosophila melanogaster behaving freely while neural and behavior activity is recorded using multi-view infrared cameras and two-photon microscopy imaging. Please check the [publication](todo) for more information.
+A tethered Drosophila melanogaster behaving freely while neural and behavior activity is recorded using multi-view infrared cameras and two-photon microscopy imaging. Please check the [publication](https://arxiv.org/abs/2112.01176) for more information.
 
 ## Introduction
 
-- Download the files using the following anonymized [link](https://drive.google.com/drive/folders/1i0xUcxp5ptXbpw28p-WFsE8pyp8HnueY?usp=sharing). __During the review process, we give a dataset of 8 of the animals.__ The full dataset will be released with the camera-ready version, on a non-anonymized link. The whole dataset includes 40 different animals and total of 364 folders. The whole dataset is close to 200GB. 
+- Download the files using the following [link](https://drive.google.com/drive/folders/1i0xUcxp5ptXbpw28p-WFsE8pyp8HnueY?usp=sharing). We give a dataset of 8 of the animals.  
 The file format will look like this:
 
 ```sh
